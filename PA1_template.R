@@ -1,7 +1,5 @@
 library(knitr)
-
 opts_chunk$set(echo=TRUE, cache=TRUE)
-
 data <- read.csv(unz("activity.zip", "activity.csv"))
 
 ##What is mean total number of steps taken per day?
@@ -10,7 +8,6 @@ data <- read.csv(unz("activity.zip", "activity.csv"))
 ##3.Calculate and report the mean and median total number of steps taken per day
 hist(tapply(data$steps, data$date, sum), xlab = "Total daily steps", breaks = 20, 
      main = "Total of steps taken per day")
-
 
 total.daily.steps <- as.numeric(tapply(data$steps, data$date, sum))
 step.mean <- mean(total.daily.steps, na.rm = TRUE)
